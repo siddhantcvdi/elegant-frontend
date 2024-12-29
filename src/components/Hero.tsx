@@ -1,17 +1,16 @@
-import heroimg from "../assets/heroimg1.png";
 import { SwipeCarousel } from "./Carousel";
 const Hero = () => {
   return (
-    // <div className="w-full flex max-sm:flex-col">
-    //   <div className="w-full">
-    //   <img
-    //     src={heroimg}
-    //     alt=""
-    //     className="object-cover"
-    //     />
-    //   </div>
-    // </div>
-    <SwipeCarousel/>
+    <>
+      <SwipeCarousel/>
+      <div className="px-4 md:px-10 mx-auto">
+        <p className="text-4xl md:text-5xl lg:text-7xl poppins-medium text-neutral-800">
+          Simply Unique<span className="text-neutral-600">/</span>
+          <br/>
+          Simply Better <span className="text-neutral-600">.</span>
+        </p>
+      </div>
+    </>
   );
 };
 

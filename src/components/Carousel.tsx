@@ -12,7 +12,7 @@ const imgs: string[] = [
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
-const DRAG_BUFFER = 50;
+const DRAG_BUFFER = 5;
 
 const SPRING_OPTIONS = {
   type: "spring",
@@ -99,7 +99,7 @@ const Images = ({ imgIndex }: ImagesProps) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-full sm:h-[600px] shrink-0 rounded-xl bg-neutral-800 object-cover"
+            className="aspect-video w-full md:h-[600px] shrink-0 rounded-xl bg-neutral-800 object-cover"
           />
         );
       })}

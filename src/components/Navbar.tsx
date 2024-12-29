@@ -3,8 +3,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  // DropdownMenuLabel,
+  // DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "./ui/input";
@@ -14,11 +14,13 @@ import SideMenu from "./SideMenu";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
-const loggedIn = true;
+const loggedIn = false;
   return (
     <nav className="sticky top-0 z-10">
       <div className="w-full h-[60px] bg-neutral-100 flex items-center px-10 justify-between max-sm:px-5">
-        <div className="logo poppins-medium text-2xl">3legant.</div>
+        <NavLink to={'/'}>
+          <div className="logo poppins-medium text-2xl">3legant.</div>
+        </NavLink>
         <div className="links gap-6 hidden md:flex">
           <NavLink to={"/"}>Home</NavLink>
           <DropdownMenu>
@@ -26,14 +28,12 @@ const loggedIn = true;
               Categories
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-            <DropdownMenuLabel>Jackets</DropdownMenuLabel>
-              <DropdownMenuSeparator/>
-              <DropdownMenuItem>Puffers</DropdownMenuItem>
-              <DropdownMenuItem>Bombers</DropdownMenuItem>
-              <DropdownMenuItem>Lightweight Jackets</DropdownMenuItem>
-              <DropdownMenuItem>Gilets</DropdownMenuItem>
-              <DropdownMenuItem>Coats</DropdownMenuItem>
-              <DropdownMenuItem>Rainwear</DropdownMenuItem>
+              <DropdownMenuItem>Living Room</DropdownMenuItem>
+              <DropdownMenuItem>Bed Room</DropdownMenuItem>
+              <DropdownMenuItem>Kitchen</DropdownMenuItem>
+              <DropdownMenuItem>Lamps</DropdownMenuItem>
+              <DropdownMenuItem>Vases</DropdownMenuItem>
+              <DropdownMenuItem>Paintings</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <NavLink to={"/about"}>About</NavLink>
