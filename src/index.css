@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Adjust width of scrollbar */
+  height: 8px; /* Adjust height of horizontal scrollbar */
+}
+
+
 .poppins-thin {
   font-family: "Poppins", serif;
   font-weight: 100;

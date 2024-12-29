@@ -3,8 +3,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "./ui/input";
@@ -14,9 +14,9 @@ import SideMenu from "./SideMenu";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
-    const loggedIn = false;
+const loggedIn = true;
   return (
-    <nav>
+    <nav className="sticky top-0 z-10">
       <div className="w-full h-[60px] bg-neutral-100 flex items-center px-10 justify-between max-sm:px-5">
         <div className="logo poppins-medium text-2xl">3legant.</div>
         <div className="links gap-6 hidden md:flex">
@@ -26,10 +26,14 @@ const Navbar = () => {
               Categories
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuLabel>Jackets</DropdownMenuLabel>
+              <DropdownMenuSeparator/>
+              <DropdownMenuItem>Puffers</DropdownMenuItem>
+              <DropdownMenuItem>Bombers</DropdownMenuItem>
+              <DropdownMenuItem>Lightweight Jackets</DropdownMenuItem>
+              <DropdownMenuItem>Gilets</DropdownMenuItem>
+              <DropdownMenuItem>Coats</DropdownMenuItem>
+              <DropdownMenuItem>Rainwear</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <NavLink to={"/about"}>About</NavLink>
@@ -51,16 +55,19 @@ const Navbar = () => {
                   <img src={account} alt="" />
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="mr-5"     >
                 <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem>
+                <DropdownMenuItem>Orders</DropdownMenuItem>
+                <DropdownMenuItem className="p-1">
+                    <Button className="w-full bg-neutral-900">
+                        Log out
+                    </Button>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             :
             <Button>
-                Login
+                Sign In
             </Button> 
             }
           </div>
