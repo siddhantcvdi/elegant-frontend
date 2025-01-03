@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,9 +14,10 @@ import SideMenu from "./SideMenu";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
+const loginPage = useNavigate();
 const loggedIn = false;
   return (
-    <nav className="sticky top-0 z-10">
+    <nav className="sticky top-0 z-10 ">
       <div className="w-full h-[60px] bg-neutral-100 flex items-center px-10 justify-between max-sm:px-5">
         <NavLink to={'/'}>
           <div className="logo poppins-medium text-2xl">3legant.</div>
@@ -66,7 +67,7 @@ const loggedIn = false;
               </DropdownMenuContent>
             </DropdownMenu>
             :
-            <Button>
+            <Button onClick={()=>loginPage('/login')}>
                 Sign In
             </Button> 
             }

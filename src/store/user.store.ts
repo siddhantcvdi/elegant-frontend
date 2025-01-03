@@ -13,7 +13,6 @@ interface Details{
 
 interface UserState{
     user: User,
-    isAuthenticated: boolean,
     token: string,
     login: (details: Details)=>void,
     logout: (token: string)=>void
@@ -25,9 +24,24 @@ const useUserStore = create<UserState>((set)=>({
         displayName: "",
         email: ""
     },
-    isAuthenticated: false,
     token: "",
-    login: (details)=>{},
+    login: async (details)=>{
+        const url = 'http://localhost:3001/api/v1/users/login'
+        try{
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(details)
+            });
+            const result = await response.json();
+            console.log(result);
+            return set(()=>({token: result.data.accessToken}))
+        }catch(err: any){
+            console.log('Error');
+        }
+    },
     logout: (token)=>{}
 }))
 
